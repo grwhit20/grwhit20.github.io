@@ -19,6 +19,17 @@ h2 {
   font-size: 12pt;
   line-height: .5;
 }
+
+@keyframes breathe {
+    from {
+      transform: scale(1);
+    }
+
+    to {
+      transform: scale(1.125);
+    }
+}
+
 .main-wrapper {
   background-color: #3E1E20;
   height: 100%;
@@ -43,7 +54,6 @@ a {
   font-size: 12px;
   color:inherit;
   display: inline-block;
-  transition: 300ms;
   padding-left: .5em;
   padding-right:.5em;
   padding-top: .2em;
@@ -53,16 +63,20 @@ a {
   text-decoration: none;
   border-radius: 10px;
   line-height: 3;
+  transition:300ms;
 }
 
 a:hover {
   background-color: #FFE800;
   color: #101820;
   font-weight: bolder;
+  animation-name: breathe;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
 }
 .info {
   position: absolute;
   top: 30%;
   left: 50%;
-  transform: translateX(0) translateY(0%);
+  transform: translateX(0%) translateY(0%);
 }
